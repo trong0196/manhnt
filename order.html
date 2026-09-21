@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gửi ảnh để in - Ảnh Nam Châm TMSTUDIO</title>
+<meta name="description" content="Tải ảnh của bạn lên để TMSTUDIO in thành ảnh nam châm tủ lạnh."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&display=swap"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- ══════════════════════════ icon sprite (inline so it works over file://) ══════════════════════════ -->
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5"/><path d="M12 3v13"/>
+  </symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+    <path d="M3 6h18M3 12h18M3 18h18"/>
+  </symbol>
+</svg>
+
+<!-- ══════════════════════════ header ══════════════════════════ -->
+<header class="site-header">
+  <div class="topbar">
+    <a class="nav-logo" href="index.html">
+      <span>Ảnh nam châm</span>
+      <strong>TMSTUDIO</strong>
+    </a>
+
+    <nav class="nav-links" aria-label="Điều hướng chính">
+      <a href="index.html">Trang chủ</a>
+      <a href="products.html">Sản Phẩm</a>
+      <a href="reviews.html">Đánh giá</a>
+      <a href="about.html">Giới thiệu</a>
+      <a href="contact.html">Liên hệ</a>
+    </nav>
+
+    <a class="nav-cta" href="order.html">
+      <svg class="ico" aria-hidden="true"><use href="#i-upload"/></svg>Gửi ảnh để in
+    </a>
+
+    <button class="nav-burger" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="mobile-nav">
+      <svg class="ico" aria-hidden="true"><use href="#i-menu"/></svg>
+    </button>
+  </div>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Điều hướng di động" hidden>
+    <a href="index.html">Trang chủ</a>
+    <a href="products.html">Sản Phẩm</a>
+    <a href="reviews.html">Đánh giá</a>
+    <a href="about.html">Giới thiệu</a>
+    <a href="contact.html">Liên hệ</a>
+    <a class="mobile-nav-cta" href="order.html">Gửi ảnh để in</a>
+  </nav>
+</header>
+
+<main class="order-page">
+  <section class="order-shell">
+    <div class="order-flow-card">
+
+      <!-- ── wizard steps ── -->
+      <ol class="order-steps">
+        <li class="is-current"><span>1</span>Thêm Ảnh
+          <svg class="step-arrow" aria-hidden="true" viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 5h9m0 0L7 1m3 4L7 9"/></svg>
+        </li>
+        <li><span>2</span>Thông Tin
+          <svg class="step-arrow" aria-hidden="true" viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 5h9m0 0L7 1m3 4L7 9"/></svg>
+        </li>
+        <li><span>3</span>Hoàn Tất</li>
+      </ol>
+
+      <!-- ── dropzone ── -->
+      <div class="order-dropzone-wrap">
+        <label class="order-dropzone" for="dropzone-file">
+          <svg aria-hidden="true" viewBox="0 0 20 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+          </svg>
+          <p class="order-dropzone-title">Bấm để tải ảnh lên</p>
+          <p class="order-dropzone-hint">Định dạng PNG, JPG, JPEG</p>
+          <input id="dropzone-file" type="file" accept="image/png,image/jpeg" multiple hidden/>
+        </label>
+      </div>
+
+      <p class="order-empty" id="order-empty">Bạn hãy bấm vào nút tải lên bên trên để tải ảnh lên nhé!</p>
+
+      <!-- ── uploaded thumbnails land here ── -->
+      <div class="order-thumbs" id="order-thumbs"></div>
+
+      <!-- ── optional desk frame ── -->
+      <div class="frame-selector" id="frame-selector">
+        <div class="frame-selector-header">
+          <h3>Khung ảnh nam châm để bàn</h3>
+          <span class="frame-selector-total" id="frame-total" hidden>0K</span>
+        </div>
+
+        <!-- frames the visitor has added -->
+        <div class="frame-selector-list" id="frame-list" hidden></div>
+
+        <!-- the form: hidden until "+ Thêm khung" is pressed -->
+        <div class="frame-selector-form" id="frame-form" hidden>
+          <div class="frame-selector-sizes" id="frame-sizes">
+              <button type="button" data-size="2" data-price="55"><span>Khung 2 ảnh</span><strong>55K</strong></button>
+              <button type="button" data-size="3" data-price="80"><span>Khung 3 ảnh</span><strong>80K</strong></button>
+              <button type="button" data-size="4" data-price="105" class="active"><span>Khung 4 ảnh</span><strong>105K</strong></button>
+              <button type="button" data-size="8" data-price="185"><span>Khung 8 ảnh</span><strong>185K</strong></button>
+              <button type="button" data-size="12" data-price="285"><span>Khung 12 ảnh</span><strong>285K</strong></button>
+          </div>
+
+          <div class="frame-selector-colors" id="frame-colors">
+            <p>Màu sắc:</p>
+            <div>
+                <button type="button" data-color="Trắng" data-hex="#fffaf2" class="active" title="Trắng"><span style="background-color:#fffaf2"></span><small>Trắng</small></button>
+                <button type="button" data-color="Đen" data-hex="#1f2420" title="Đen"><span style="background-color:#1f2420"></span><small>Đen</small></button>
+                <button type="button" data-color="Hồng" data-hex="#efb7bc" title="Hồng"><span style="background-color:#efb7bc"></span><small>Hồng</small></button>
+                <button type="button" data-color="Be" data-hex="#ddc9a9" title="Be"><span style="background-color:#ddc9a9"></span><small>Be</small></button>
+                <button type="button" data-color="Xanh lá" data-hex="#6b8a68" title="Xanh lá"><span style="background-color:#6b8a68"></span><small>Xanh lá</small></button>
+                <button type="button" data-color="Tím" data-hex="#9d7bb8" title="Tím"><span style="background-color:#9d7bb8"></span><small>Tím</small></button>
+                <button type="button" data-color="Cam" data-hex="#ee7446" title="Cam"><span style="background-color:#ee7446"></span><small>Cam</small></button>
+                <button type="button" data-color="Xanh biển" data-hex="#4a90c4" title="Xanh biển"><span style="background-color:#4a90c4"></span><small>Xanh biển</small></button>
+                <button type="button" data-color="Nâu" data-hex="#8b5e3c" title="Nâu"><span style="background-color:#8b5e3c"></span><small>Nâu</small></button>
+                <button type="button" data-color="Vàng" data-hex="#e6c84e" title="Vàng"><span style="background-color:#e6c84e"></span><small>Vàng</small></button>
+                <button type="button" data-color="Xám" data-hex="#9a9a9a" title="Xám"><span style="background-color:#9a9a9a"></span><small>Xám</small></button>
+            </div>
+          </div>
+
+          <div class="frame-selector-count">
+            <p>Số lượng:</p>
+            <div>
+              <button type="button" id="frame-minus" aria-label="Giảm">−</button>
+              <span id="frame-count">1</span>
+              <button type="button" id="frame-plus" aria-label="Tăng">+</button>
+            </div>
+          </div>
+
+          <div class="frame-selector-actions">
+            <button type="button" class="frame-selector-confirm" id="frame-confirm">Thêm</button>
+            <button type="button" class="frame-selector-cancel" id="frame-cancel">Huỷ</button>
+          </div>
+        </div>
+
+        <button type="button" class="frame-selector-add-btn" id="frame-add">+ Thêm khung</button>
+      </div>
+
+      <div class="order-submit">
+        <button class="btn-continue" id="order-continue" disabled>Tiếp tục</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ══════════════════════════ footer ══════════════════════════ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <aside>
+      <p class="footer-brand">Ảnh Nam Châm - TMSTUDIO</p>
+      <p class="footer-tagline">Lưu giữ khoảnh khắc trên những bức hình</p>
+    </aside>
+    <nav aria-label="Mạng xã hội">
+      <h2 class="footer-title">Social</h2>
+      <div class="socials">
+        <a href="https://zalo.me/0973547609" target="_blank" rel="noopener noreferrer" aria-label="Zalo TMSTUDIO"><img src="assets/icon-zalo.svg" alt=""/></a>
+        <a href="https://wa.me/84973547609" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp TMSTUDIO"><img src="assets/icon-whatsapp.svg" alt=""/></a>
+        <a href="https://www.facebook.com/anhnamcham.anacha" target="_blank" rel="noopener noreferrer" aria-label="Facebook TMSTUDIO"><img src="assets/icon-facebook.svg" alt=""/></a>
+        <a href="https://www.instagram.com/anhnamcham" target="_blank" rel="noopener noreferrer" aria-label="Instagram TMSTUDIO"><img src="assets/icon-instagram.svg" alt=""/></a>
+        <a href="https://www.tiktok.com/@anhnamcham" target="_blank" rel="noopener noreferrer" aria-label="TikTok TMSTUDIO"><img src="assets/icon-tiktok.svg" alt=""/></a>
+      </div>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // Only interactive bit on the page: the mobile menu toggle.
+  const burger = document.querySelector('.nav-burger');
+  const panel = document.getElementById('mobile-nav');
+  burger.addEventListener('click', () => {
+    const open = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', String(!open));
+    panel.hidden = open;
+  });
+  panel.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') {
+      burger.setAttribute('aria-expanded', 'false');
+      panel.hidden = true;
+    }
+  });
+
+  // ── frame picker ────────────────────────────────────────────────────────
+  // The form is hidden until "+ Thêm khung" is pressed,
+  // "Thêm" pushes the chosen size/colour/qty onto the list, "Huỷ" closes it.
+  const $ = (id) => document.getElementById(id);
+  const form = $('frame-form'), addBtn = $('frame-add'), list = $('frame-list'),
+        totalEl = $('frame-total'), countEl = $('frame-count'), cont = $('order-continue');
+
+  let size = 4, price = 105, color = 'Trắng', hex = '#fffaf2', qty = 1;
+  const frames = [];
+
+  const pick = (wrap, btn, cb) => {
+    wrap.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    cb();
+  };
+
+  $('frame-sizes').addEventListener('click', (e) => {
+    const b = e.target.closest('button'); if (!b) return;
+    pick($('frame-sizes'), b, () => { size = +b.dataset.size; price = +b.dataset.price; });
+  });
+  $('frame-colors').addEventListener('click', (e) => {
+    const b = e.target.closest('button'); if (!b) return;
+    pick($('frame-colors'), b, () => { color = b.dataset.color; hex = b.dataset.hex; });
+  });
+
+  $('frame-minus').addEventListener('click', () => { qty = Math.max(1, qty - 1); countEl.textContent = qty; });
+  $('frame-plus').addEventListener('click', () => { qty += 1; countEl.textContent = qty; });
+
+  const openForm = (open) => { form.hidden = !open; addBtn.hidden = open; };
+  addBtn.addEventListener('click', () => openForm(true));
+  $('frame-cancel').addEventListener('click', () => openForm(false));
+
+  const render = () => {
+    list.hidden = frames.length === 0;
+    list.innerHTML = frames.map((f, i) => `
+      <div class="frame-selector-item">
+        <span class="frame-selector-color" style="background-color:${f.hex}"></span>
+        <div class="frame-selector-info">
+          <strong>Khung ${f.size} ảnh - ${f.color}</strong>
+          <span>x${f.count} &middot; ${f.price * f.count}K</span>
+        </div>
+        <button type="button" class="frame-selector-remove" data-i="${i}">Xoá</button>
+      </div>`).join('');
+
+    const total = frames.reduce((s, f) => s + f.price * f.count, 0);
+    totalEl.hidden = total === 0;
+    totalEl.textContent = total + 'K';
+    cont.disabled = frames.length === 0;
+  };
+
+  $('frame-confirm').addEventListener('click', () => {
+    const hit = frames.find(f => f.size === size && f.color === color);
+    if (hit) hit.count += qty; else frames.push({ size, price, color, hex, count: qty });
+    qty = 1; countEl.textContent = qty;
+    openForm(false);
+    render();
+  });
+
+  list.addEventListener('click', (e) => {
+    const b = e.target.closest('.frame-selector-remove'); if (!b) return;
+    frames.splice(+b.dataset.i, 1);
+    render();
+  });
+</script>
+</body>
+</html>

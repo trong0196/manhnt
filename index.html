@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ảnh Nam Châm - TMSTUDIO</title>
+<meta name="description" content="In ảnh nam châm tủ lạnh theo yêu cầu với 6 lớp nguyên liệu bền đẹp, hít chắc trên tủ lạnh."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&display=swap"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- ══════════════════════════ icon sprite (inline so it works over file://) ══════════════════════════ -->
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5"/><path d="M12 3v13"/>
+  </symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.1 9.1 0 0 1-3.8-.8L3 21l1.9-4.9A8.3 8.3 0 0 1 3.6 11.5 8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4Z"/>
+  </symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2Z"/><circle cx="12" cy="13" r="4"/>
+  </symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/>
+  </symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/>
+    <path d="M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/>
+  </symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z"/>
+  </symbol>
+  <symbol id="i-photo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.8"/><path d="m21 15-5-5L5 21"/>
+  </symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/>
+  </symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1 6h12v10H1z"/><path d="M13 9h4l4 4v3h-8z"/><circle cx="6" cy="18.5" r="2"/><circle cx="17.5" cy="18.5" r="2"/>
+  </symbol>
+  <symbol id="i-ruler" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="1.5" y="7" width="21" height="10" rx="1.5"/><path d="M6 7v3M10 7v5M14 7v3M18 7v5"/>
+  </symbol>
+  <symbol id="i-weight" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6.5 7h11l2.5 13H4L6.5 7Z"/><circle cx="12" cy="5" r="2.5"/>
+  </symbol>
+  <symbol id="i-tape" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="9" cy="11" r="6"/><circle cx="9" cy="11" r="2"/><path d="M15 17H6a4 4 0 0 1 0-8"/><path d="M15 17h6v3h-9"/>
+  </symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+    <path d="M3 6h18M3 12h18M3 18h18"/>
+  </symbol>
+</svg>
+
+<!-- ══════════════════════════ header ══════════════════════════ -->
+<header class="site-header">
+  <div class="topbar">
+    <a class="nav-logo" href="index.html">
+      <span>Ảnh nam châm</span>
+      <strong>TMSTUDIO</strong>
+    </a>
+
+    <nav class="nav-links" aria-label="Điều hướng chính">
+      <a href="index.html" class="is-active">Trang chủ</a>
+      <a href="products.html">Sản Phẩm</a>
+      <a href="reviews.html">Đánh giá</a>
+      <a href="about.html">Giới thiệu</a>
+      <a href="contact.html">Liên hệ</a>
+    </nav>
+
+    <a class="nav-cta" href="order.html">
+      <svg class="ico" aria-hidden="true"><use href="#i-upload"/></svg>Gửi ảnh để in
+    </a>
+
+    <button class="nav-burger" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="mobile-nav">
+      <svg class="ico" aria-hidden="true"><use href="#i-menu"/></svg>
+    </button>
+  </div>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Điều hướng di động" hidden>
+    <a href="index.html" class="is-active">Trang chủ</a>
+    <a href="products.html">Sản Phẩm</a>
+    <a href="reviews.html">Đánh giá</a>
+    <a href="about.html">Giới thiệu</a>
+    <a href="contact.html">Liên hệ</a>
+    <a class="mobile-nav-cta" href="order.html">Gửi ảnh để in</a>
+  </nav>
+</header>
+
+<main class="home" id="top">
+
+  <!-- ══════════════════════════ hero ══════════════════════════ -->
+  <section class="hero">
+    <div class="hero-copy">
+      <h1>TMSTUDIO<br/><span>In ảnh nam châm tủ lạnh</span></h1>
+      <p>Ảnh nam châm hít tủ lạnh theo yêu cầu với 6 lớp nguyên liệu bền đẹp, hít chắc trên tủ lạnh.</p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="order.html"><svg class="ico" aria-hidden="true"><use href="#i-upload"/></svg>Gửi ảnh để in</a>
+        <a class="btn btn-ghost" href="https://zalo.me/0973547609" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg>Nhắn Zalo</a>
+      </div>
+
+      <ul class="hero-benefits">
+        <li><svg class="ico" aria-hidden="true"><use href="#i-camera"/></svg>Công nghệ chỉnh ảnh độc quyền</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-layers"/></svg>Ảnh nam châm 6 lớp</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-gift"/></svg>Tặng thêm keo dán nano acrylic</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg>Ship quốc tế và Việt Nam</li>
+      </ul>
+    </div>
+
+    <div class="hero-visual">
+      <img src="assets/hero-fridge.jpg" alt="Ảnh nam châm TMSTUDIO trên cánh tủ lạnh"/>
+      <div class="hero-prices">
+        <article class="price-card">
+          <p>Set 20 ảnh</p><strong>400k</strong><span>Freeship</span>
+        </article>
+        <article class="price-card">
+          <p>Set 50 ảnh</p><strong>1tr</strong><span>Freeship, tặng 2 ảnh</span>
+        </article>
+        <article class="price-card">
+          <p>Set 100 ảnh</p><strong>1tr990</strong><span>Freeship, tặng 4 ảnh</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ magnet sets ══════════════════════════ -->
+  <section class="band magnet-band" id="san-pham">
+    <div class="magnet-layout">
+      <div class="magnet-visual">
+        <img src="assets/magnet-closeup.jpg" alt="Cận cảnh ảnh nam châm 6 lớp của TMSTUDIO"/>
+        <div class="magnet-badge">
+          <strong>Lớp nam châm hít chắc trên tủ lạnh.</strong>
+          <span>Dễ dàng nhìn ngắm những khoảnh khắc đẹp mỗi ngày</span>
+        </div>
+      </div>
+
+      <div class="magnet-content">
+        <div class="section-title">
+          <span class="eyebrow">Ảnh nam châm</span>
+          <h2>Chọn set ảnh nam châm phù hợp</h2>
+          <p>Càng nhiều ảnh càng tiết kiệm, freeship cho các set lớn.</p>
+        </div>
+
+        <div class="set-grid">
+          <article class="set-card">
+            <p>Set 6 ảnh</p><strong>120k</strong><em>20k/ảnh</em>
+          </article>
+          <article class="set-card">
+            <p>Set 20 ảnh</p><strong>400k</strong><em>Freeship</em>
+          </article>
+          <article class="set-card">
+            <p>Set 30 ảnh</p><strong>600k</strong><em>Tặng 1 ảnh + freeship</em>
+          </article>
+          <article class="set-card is-bonus">
+            <span class="ribbon">Bán chạy</span>
+            <p>Set 50 ảnh</p><strong>1.000k</strong><em>Tặng 2 ảnh + freeship</em>
+          </article>
+          <article class="set-card is-bonus">
+            <span class="ribbon">Bán chạy</span>
+            <p>Set 100 ảnh</p><strong>1.990k</strong><em>Tặng 4 ảnh + freeship</em>
+          </article>
+          <article class="set-card">
+            <p>Set +100 ảnh</p><strong>Liên hệ</strong><em>Liên hệ shop</em>
+          </article>
+        </div>
+
+        <p class="fine-note">* Chương trình freeship không áp dụng cho đơn hàng ship hoả tốc trong ngày.</p>
+
+        <div class="calc">
+          <span>Ví dụ</span>
+          <strong>8 ảnh = 120k + 2 x 20k + ship 25k = 185k</strong>
+        </div>
+
+        <div class="spec-grid">
+          <article>
+            <svg class="ico" aria-hidden="true"><use href="#i-ruler"/></svg>
+            <strong>5,4 x 7,8cm</strong><span>Kích thước</span>
+          </article>
+          <article>
+            <svg class="ico" aria-hidden="true"><use href="#i-layers"/></svg>
+            <strong>Dày 3mm</strong><span>Độ dày</span>
+          </article>
+          <article>
+            <svg class="ico" aria-hidden="true"><use href="#i-weight"/></svg>
+            <strong>25g/cái</strong><span>Trọng lượng</span>
+          </article>
+          <article>
+            <svg class="ico" aria-hidden="true"><use href="#i-tape"/></svg>
+            <strong>Tặng keo nano</strong><span>Dán siêu chắc</span>
+          </article>
+        </div>
+
+        <div class="magnet-actions">
+          <a class="btn btn-primary" href="order.html"><svg class="ico" aria-hidden="true"><use href="#i-upload"/></svg>Gửi ảnh để in</a>
+          <a class="btn btn-ghost" href="https://zalo.me/0973547609" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg>Nhắn Zalo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ desk frame ══════════════════════════ -->
+  <section class="band frame-band">
+    <div class="frame-copy">
+      <div class="section-title">
+        <h2>Khung ảnh hít nam châm để bàn</h2>
+      </div>
+      <p class="frame-lede">Khung in thiết kế bằng nhựa PLA, có lớp kim loại để hít ảnh nam châm, thuận tiện thay đổi ảnh mỗi ngày. Phù hợp làm quà tặng.</p>
+
+      <div class="color-row">
+        <strong>Màu sắc:</strong>
+        <span><i style="background-color:#fffaf2"></i>Trắng</span>
+        <span><i style="background-color:#1f2420"></i>Đen</span>
+        <span><i style="background-color:#efb7bc"></i>Hồng</span>
+        <span><i style="background-color:#ddc9a9"></i>Be</span>
+        <span><i style="background-color:#6b8a68"></i>Xanh lá</span>
+        <span><i style="background-color:#9d7bb8"></i>Tím</span>
+        <span><i style="background-color:#ee7446"></i>Cam</span>
+        <span><i style="background-color:#4a90c4"></i>Xanh biển</span>
+        <span><i style="background-color:#8b5e3c"></i>Nâu</span>
+        <span><i style="background-color:#e6c84e"></i>Vàng</span>
+        <span><i style="background-color:#9a9a9a"></i>Xám</span>
+      </div>
+
+      <div class="frame-prices">
+        <article><p>Khung 2 ảnh</p><strong>55k</strong></article>
+        <article><p>Khung 3 ảnh</p><strong>80k</strong></article>
+        <article><p>Khung 4 ảnh</p><strong>105k</strong></article>
+        <article><p>Khung 8 ảnh</p><strong>185k</strong></article>
+        <article class="is-featured"><p>Khung 12 ảnh</p><strong>285k</strong><span>Bán chạy</span></article>
+      </div>
+
+      <p class="fine-note">* Giá trên đã bao gồm khung và đế đựng khung (chưa bao gồm ảnh nam châm).</p>
+
+      <div class="frame-actions">
+        <a class="btn btn-primary" href="khung-de-ban.html">Xem chi tiết</a>
+        <a class="btn btn-ghost" href="https://zalo.me/0973547609" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg>Nhắn Zalo</a>
+      </div>
+    </div>
+
+    <div class="frame-visual">
+      <img src="assets/desk-frame.jpg" alt="Khung ảnh nam châm để bàn TMSTUDIO, nhiều màu"/>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ order process ══════════════════════════ -->
+  <section class="order-card" id="gioi-thieu">
+    <div class="process">
+      <h2>Quy trình đặt hàng</h2>
+      <div class="process-steps">
+        <article>
+          <b>1</b>
+          <svg class="ico" aria-hidden="true"><use href="#i-photo"/></svg>
+          <h3>Chọn ảnh</h3>
+          <p>Chọn ảnh bạn muốn in.</p>
+        </article>
+        <article>
+          <b>2</b>
+          <svg class="ico" aria-hidden="true"><use href="#i-upload"/></svg>
+          <h3>Gửi ảnh</h3>
+          <p>Tải ảnh lên website hoặc Zalo, Whatsapp +84973547609.</p>
+        </article>
+        <article>
+          <b>3</b>
+          <svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>
+          <h3>Chờ xác nhận</h3>
+          <p>TMSTUDIO sẽ liên lạc để xác nhận đơn hàng.</p>
+        </article>
+        <article>
+          <b>4</b>
+          <svg class="ico" aria-hidden="true"><use href="#i-truck"/></svg>
+          <h3>Nhận hàng</h3>
+          <p>Từ 4-7 ngày tại Việt Nam và 15-20 ngày cho đơn quốc tế.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="delivery">
+      <article class="delivery-intl">
+        <svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg>
+        <span>Phí ship quốc tế bạn vui lòng nhắn
+          <a href="https://zalo.me/0973547609" target="_blank" rel="noopener noreferrer">Zalo</a>, <a href="https://wa.me/84973547609" target="_blank" rel="noopener noreferrer">WhatsApp</a> +84973547609 hoặc
+          <a href="https://fb.com/anhnamcham.anacha" target="_blank" rel="noopener noreferrer">FB</a> để TMSTUDIO báo giá cụ thể nhé.</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ quality + feedback ══════════════════════════ -->
+  <section class="proof-grid" id="danh-gia">
+    <div class="quality-card">
+      <span class="eyebrow">Chất lượng TMSTUDIO</span>
+      <h2>6 lớp bền đẹp - giữ màu tự nhiên</h2>
+
+      <div class="quality-body">
+        <img src="assets/layer-stack.jpg" alt="Cấu tạo 6 lớp của ảnh nam châm TMSTUDIO"/>
+        <div class="layer-list">
+          <p><b>1</b>Lớp phủ plastic chống trầy tạo độ bóng</p>
+          <p><b>2</b>Lớp màng cán trong suốt giúp bảo vệ ảnh lâu dài</p>
+          <p><b>3</b>Lớp giấy ảnh glossy cao cấp</p>
+          <p><b>4</b>Khung kim loại (giữ cấu trúc)</p>
+          <p><b>5</b>Lớp đệm (tăng độ dày)</p>
+          <p><b>6</b>Nam châm dày, hít chắc</p>
+        </div>
+      </div>
+
+      <div class="gallery-row">
+        <img src="assets/gallery-1.jpg" alt="Sản phẩm TMSTUDIO khách hàng đã làm"/>
+        <img src="assets/gallery-2.jpg" alt="Sản phẩm TMSTUDIO khách hàng đã làm"/>
+        <img class="is-contain" src="assets/desk-frame-real.jpg" alt="Khung ảnh để bàn TMSTUDIO 12 ảnh"/>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <h2>Feedback từ khách hàng</h2>
+        <a href="reviews.html">Xem thêm →</a>
+      </div>
+      <div class="feedback-grid">
+        <img src="assets/feedback-1.jpg" alt="Feedback khách hàng TMSTUDIO"/>
+        <img src="assets/feedback-2.jpg" alt="Feedback khách hàng TMSTUDIO"/>
+        <img src="assets/feedback-3.jpg" alt="Feedback khách hàng TMSTUDIO"/>
+        <img src="assets/feedback-4.jpg" alt="Feedback khách hàng TMSTUDIO"/>
+        <img src="assets/feedback-5.jpg" alt="Feedback khách hàng TMSTUDIO"/>
+        <img src="assets/feedback-6.jpg" alt="Feedback khách hàng TMSTUDIO"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ final CTA ══════════════════════════ -->
+  <section class="final-cta" id="gui-anh">
+    <img src="assets/cta.jpg" alt="Bộ ảnh nam châm TMSTUDIO"/>
+    <div>
+      <h2>Bạn có nhiều hình xinh?</h2>
+      <p>Gửi cho TMSTUDIO làm ảnh nam châm nha</p>
+    </div>
+    <a class="btn" href="order.html"><svg class="ico" aria-hidden="true"><use href="#i-upload"/></svg>Gửi ảnh ngay</a>
+  </section>
+
+</main>
+
+
+<script>
+  // Only interactive bit on the page: the mobile menu toggle.
+  const burger = document.querySelector('.nav-burger');
+  const panel = document.getElementById('mobile-nav');
+  burger.addEventListener('click', () => {
+    const open = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', String(!open));
+    panel.hidden = open;
+  });
+  panel.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') {
+      burger.setAttribute('aria-expanded', 'false');
+      panel.hidden = true;
+    }
+  });
+</script>
+</body>
+</html>
