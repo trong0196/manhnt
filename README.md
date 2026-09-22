@@ -46,9 +46,9 @@ Nút **"Nhắn Zalo"** và icon social trỏ ra link ngoài (Zalo/WhatsApp/FB/IG
     ├── magnets/m01..m30.jpg  # ảnh khách hàng — trang chi tiết ảnh nam châm
     ├── frames/f01..f12.jpg   # ảnh khách hàng — trang chi tiết khung
     ├── nano.jpg              # keo dán nano acrylic
-    ├── hero-fridge.jpg       # ảnh hero trang chủ
-    ├── magnet-closeup.jpg    # dán ảnh lên tủ lạnh
-    ├── desk-frame.jpg        # khung để bàn trên bàn làm việc
+    ├── hero-fridge.jpg       # ảnh hero (trang chủ, giới thiệu, liên hệ, đánh giá)
+    ├── magnet-closeup.jpg    # ảnh nam châm xếp trên bàn (trang chủ, sản phẩm, chi tiết)
+    ├── product-magnets.jpg   # nam châm tròn + chữ nhật (khối khung, trang khung để bàn)
     ├── layer-stack.jpg       # sơ đồ 6 lớp
     ├── desk-frame-real.jpg   # khung 12 ảnh
     ├── gallery-1..2.jpg      # ảnh sản phẩm trên tay

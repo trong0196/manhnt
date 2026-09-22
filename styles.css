@@ -2050,7 +2050,7 @@ a { color: inherit; text-decoration: none; }
 }
 .detail-visual { position: absolute; inset: 0 0 0 30%; z-index: 0; height: 100%; }
 .detail-visual img { width: 100%; height: 100%; object-fit: cover; }
-.detail-magnet .detail-visual img { object-position: 70% 61%; }
+.detail-magnet .detail-visual img { object-position: 50% 82%; }
 .detail-frame  .detail-visual img { object-position: left center; }
 
 .detail-intro {
