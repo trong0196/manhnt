@@ -50,8 +50,8 @@ Nút **"Nhắn Zalo"** và icon social trỏ ra link ngoài (Zalo/WhatsApp/FB/IG
     ├── magnet-closeup.jpg    # ảnh nam châm xếp trên bàn (trang chủ, sản phẩm, chi tiết)
     ├── product-magnets.jpg   # nam châm tròn + chữ nhật (khối khung, trang khung để bàn)
     ├── layer-stack.jpg       # sơ đồ 6 lớp
-    ├── desk-frame-real.jpg   # khung 12 ảnh
-    ├── gallery-1..2.jpg      # ảnh sản phẩm trên tay
+    ├── gallery-1..2.jpg      # ảnh máy dập ở xưởng (khối Chất lượng)
+    ├── favicon.png           # icon tab trình duyệt (180x180)
     ├── feedback-1..6.jpg     # screenshot feedback khách hàng
     ├── cta.jpg               # ảnh nghiêng ở banner cuối
     └── icon-{zalo,zalo-color,whatsapp,facebook,instagram,tiktok,telegram,email}.svg
@@ -71,7 +71,7 @@ Thay ảnh: giữ nguyên tên file trong `assets/` thì không cần sửa HTML
 | 3 | Ảnh nam châm | panel kem, ảnh + badge bên trái, 6 set card + note + ví dụ tính tiền + 4 thông số |
 | 4 | Khung để bàn | nền gradient nâu vàng, 11 swatch màu, 5 mức giá, 2 nút |
 | 5 | Quy trình đặt hàng | 4 bước có đường nối đứt nét + box phí ship quốc tế |
-| 6 | Chất lượng + Feedback | grid 2 cột: sơ đồ 6 lớp / lưới 6 ảnh feedback |
+| 6 | Chất lượng + Feedback | grid 2 cột: sơ đồ 6 lớp + 2 ảnh xưởng / lưới 6 ảnh feedback |
 | 7 | Final CTA | banner vàng, ảnh nghiêng -7°, nút nâu đậm |
 | 8 | Footer | **không có** — xem ghi chú bên dưới |
 
