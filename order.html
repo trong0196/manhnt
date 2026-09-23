@@ -61,95 +61,37 @@
 
 <main class="order-page">
   <section class="order-shell">
-    <div class="order-flow-card">
 
-      <!-- ── wizard steps ── -->
-      <ol class="order-steps">
-        <li class="is-current"><span>1</span>Thêm Ảnh
-          <svg class="step-arrow" aria-hidden="true" viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 5h9m0 0L7 1m3 4L7 9"/></svg>
-        </li>
-        <li><span>2</span>Thông Tin
-          <svg class="step-arrow" aria-hidden="true" viewBox="0 0 12 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 5h9m0 0L7 1m3 4L7 9"/></svg>
-        </li>
-        <li><span>3</span>Hoàn Tất</li>
-      </ol>
+    <div class="order-intro">
+      <span class="eyebrow">Gửi ảnh để in</span>
+      <h1>Điền đơn và gửi ảnh cho tiệm</h1>
+      <p>Bạn điền thông tin nhận hàng, chọn set ảnh và khung ngay trong biểu mẫu bên dưới. Tiệm nhận được là nhắn lại xác nhận trong ngày.</p>
+      <ul class="order-prep">
+        <li><svg class="ico" aria-hidden="true"><use href="#i-photo"/></svg>Chọn sẵn ảnh muốn in trong máy</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-truck"/></svg>Tên, số điện thoại và địa chỉ nhận hàng</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Muốn lấy thêm khung để bàn thì chọn cỡ và màu</li>
+      </ul>
+    </div>
 
-      <!-- ── dropzone ── -->
-      <div class="order-dropzone-wrap">
-        <label class="order-dropzone" for="dropzone-file">
-          <svg aria-hidden="true" viewBox="0 0 20 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
-          </svg>
-          <p class="order-dropzone-title">Bấm để tải ảnh lên</p>
-          <p class="order-dropzone-hint">Định dạng PNG, JPG, JPEG</p>
-          <input id="dropzone-file" type="file" accept="image/png,image/jpeg" multiple hidden/>
-        </label>
-      </div>
-
-      <p class="order-empty" id="order-empty">Bạn hãy bấm vào nút tải lên bên trên để tải ảnh lên nhé!</p>
-
-      <!-- ── uploaded thumbnails land here ── -->
-      <div class="order-thumbs" id="order-thumbs"></div>
-
-      <!-- ── optional desk frame ── -->
-      <div class="frame-selector" id="frame-selector">
-        <div class="frame-selector-header">
-          <h3>Khung ảnh nam châm để bàn</h3>
-          <span class="frame-selector-total" id="frame-total" hidden>0K</span>
+    <!-- ══════════════════════════════════════════════════════════════════
+         BIỂU MẪU GOOGLE FORM
+         Dán đường dẫn form vào biến FORM_URL trong thẻ script ở cuối trang.
+         Lấy đường dẫn: mở form → nút Send (Gửi) → tab < > → copy phần src.
+         Chưa dán thì trang tự hiện khối "nhắn Zalo" thay cho biểu mẫu.
+         ══════════════════════════════════════════════════════════════════ -->
+    <div class="order-form-card" id="order-form-card">
+      <div class="order-form-fallback" id="order-form-fallback">
+        <h2>Gửi ảnh qua Zalo nhé</h2>
+        <p>Biểu mẫu đặt hàng đang được tiệm hoàn thiện. Trong lúc này, bạn nhắn Zalo hoặc Facebook cho tiệm, gửi kèm ảnh muốn in và địa chỉ nhận hàng là tiệm báo giá ngay.</p>
+        <div class="order-fallback-actions">
+          <a class="pill pill-primary" href="https://zaloapp.com/qr/p/19hxy2br83hor" target="_blank" rel="noopener noreferrer">Nhắn Zalo</a>
+          <a class="pill pill-ghost" href="https://fb.com/anhnamcham.tm" target="_blank" rel="noopener noreferrer">Nhắn Facebook</a>
         </div>
-
-        <!-- frames the visitor has added -->
-        <div class="frame-selector-list" id="frame-list" hidden></div>
-
-        <!-- the form: hidden until "+ Thêm khung" is pressed -->
-        <div class="frame-selector-form" id="frame-form" hidden>
-          <div class="frame-selector-sizes" id="frame-sizes">
-              <button type="button" data-size="2" data-price="55"><span>Khung 2 ảnh</span><strong>55K</strong></button>
-              <button type="button" data-size="3" data-price="80"><span>Khung 3 ảnh</span><strong>80K</strong></button>
-              <button type="button" data-size="4" data-price="105" class="active"><span>Khung 4 ảnh</span><strong>105K</strong></button>
-              <button type="button" data-size="8" data-price="185"><span>Khung 8 ảnh</span><strong>185K</strong></button>
-              <button type="button" data-size="12" data-price="285"><span>Khung 12 ảnh</span><strong>285K</strong></button>
-          </div>
-
-          <div class="frame-selector-colors" id="frame-colors">
-            <p>Màu sắc:</p>
-            <div>
-                <button type="button" data-color="Trắng" data-hex="#fffaf2" class="active" title="Trắng"><span style="background-color:#fffaf2"></span><small>Trắng</small></button>
-                <button type="button" data-color="Đen" data-hex="#1f2420" title="Đen"><span style="background-color:#1f2420"></span><small>Đen</small></button>
-                <button type="button" data-color="Hồng" data-hex="#efb7bc" title="Hồng"><span style="background-color:#efb7bc"></span><small>Hồng</small></button>
-                <button type="button" data-color="Be" data-hex="#ddc9a9" title="Be"><span style="background-color:#ddc9a9"></span><small>Be</small></button>
-                <button type="button" data-color="Xanh lá" data-hex="#6b8a68" title="Xanh lá"><span style="background-color:#6b8a68"></span><small>Xanh lá</small></button>
-                <button type="button" data-color="Tím" data-hex="#9d7bb8" title="Tím"><span style="background-color:#9d7bb8"></span><small>Tím</small></button>
-                <button type="button" data-color="Cam" data-hex="#ee7446" title="Cam"><span style="background-color:#ee7446"></span><small>Cam</small></button>
-                <button type="button" data-color="Xanh biển" data-hex="#4a90c4" title="Xanh biển"><span style="background-color:#4a90c4"></span><small>Xanh biển</small></button>
-                <button type="button" data-color="Nâu" data-hex="#8b5e3c" title="Nâu"><span style="background-color:#8b5e3c"></span><small>Nâu</small></button>
-                <button type="button" data-color="Vàng" data-hex="#e6c84e" title="Vàng"><span style="background-color:#e6c84e"></span><small>Vàng</small></button>
-                <button type="button" data-color="Xám" data-hex="#9a9a9a" title="Xám"><span style="background-color:#9a9a9a"></span><small>Xám</small></button>
-            </div>
-          </div>
-
-          <div class="frame-selector-count">
-            <p>Số lượng:</p>
-            <div>
-              <button type="button" id="frame-minus" aria-label="Giảm">−</button>
-              <span id="frame-count">1</span>
-              <button type="button" id="frame-plus" aria-label="Tăng">+</button>
-            </div>
-          </div>
-
-          <div class="frame-selector-actions">
-            <button type="button" class="frame-selector-confirm" id="frame-confirm">Thêm</button>
-            <button type="button" class="frame-selector-cancel" id="frame-cancel">Huỷ</button>
-          </div>
-        </div>
-
-        <button type="button" class="frame-selector-add-btn" id="frame-add">+ Thêm khung</button>
-      </div>
-
-      <div class="order-submit">
-        <button class="btn-continue" id="order-continue" disabled>Tiếp tục</button>
       </div>
     </div>
+
+    <p class="order-help">Không quen điền biểu mẫu? Bạn cứ <a href="https://zaloapp.com/qr/p/19hxy2br83hor" target="_blank" rel="noopener noreferrer">nhắn Zalo</a> cho tiệm, gửi ảnh và địa chỉ là được.</p>
+
   </section>
 </main>
 
@@ -174,7 +116,7 @@
 </footer>
 
 <script>
-  // Only interactive bit on the page: the mobile menu toggle.
+  // ── menu điện thoại ─────────────────────────────────────────────────────
   const burger = document.querySelector('.nav-burger');
   const panel = document.getElementById('mobile-nav');
   burger.addEventListener('click', () => {
@@ -189,69 +131,21 @@
     }
   });
 
-  // ── frame picker ────────────────────────────────────────────────────────
-  // The form is hidden until "+ Thêm khung" is pressed,
-  // "Thêm" pushes the chosen size/colour/qty onto the list, "Huỷ" closes it.
-  const $ = (id) => document.getElementById(id);
-  const form = $('frame-form'), addBtn = $('frame-add'), list = $('frame-list'),
-        totalEl = $('frame-total'), countEl = $('frame-count'), cont = $('order-continue');
+  // ── biểu mẫu Google Form ────────────────────────────────────────────────
+  // Dán đường dẫn form vào đây, dạng:
+  // https://docs.google.com/forms/d/e/XXXXXXXX/viewform?embedded=true
+  const FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSei-4f_hl_IBZdpQqXXWZJTcG6Iu_ne-23FYeR3yTNd5iKWUg/viewform?embedded=true';
 
-  let size = 4, price = 105, color = 'Trắng', hex = '#fffaf2', qty = 1;
-  const frames = [];
-
-  const pick = (wrap, btn, cb) => {
-    wrap.querySelectorAll('button').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    cb();
-  };
-
-  $('frame-sizes').addEventListener('click', (e) => {
-    const b = e.target.closest('button'); if (!b) return;
-    pick($('frame-sizes'), b, () => { size = +b.dataset.size; price = +b.dataset.price; });
-  });
-  $('frame-colors').addEventListener('click', (e) => {
-    const b = e.target.closest('button'); if (!b) return;
-    pick($('frame-colors'), b, () => { color = b.dataset.color; hex = b.dataset.hex; });
-  });
-
-  $('frame-minus').addEventListener('click', () => { qty = Math.max(1, qty - 1); countEl.textContent = qty; });
-  $('frame-plus').addEventListener('click', () => { qty += 1; countEl.textContent = qty; });
-
-  const openForm = (open) => { form.hidden = !open; addBtn.hidden = open; };
-  addBtn.addEventListener('click', () => openForm(true));
-  $('frame-cancel').addEventListener('click', () => openForm(false));
-
-  const render = () => {
-    list.hidden = frames.length === 0;
-    list.innerHTML = frames.map((f, i) => `
-      <div class="frame-selector-item">
-        <span class="frame-selector-color" style="background-color:${f.hex}"></span>
-        <div class="frame-selector-info">
-          <strong>Khung ${f.size} ảnh - ${f.color}</strong>
-          <span>x${f.count} &middot; ${f.price * f.count}K</span>
-        </div>
-        <button type="button" class="frame-selector-remove" data-i="${i}">Xoá</button>
-      </div>`).join('');
-
-    const total = frames.reduce((s, f) => s + f.price * f.count, 0);
-    totalEl.hidden = total === 0;
-    totalEl.textContent = total + 'K';
-    cont.disabled = frames.length === 0;
-  };
-
-  $('frame-confirm').addEventListener('click', () => {
-    const hit = frames.find(f => f.size === size && f.color === color);
-    if (hit) hit.count += qty; else frames.push({ size, price, color, hex, count: qty });
-    qty = 1; countEl.textContent = qty;
-    openForm(false);
-    render();
-  });
-
-  list.addEventListener('click', (e) => {
-    const b = e.target.closest('.frame-selector-remove'); if (!b) return;
-    frames.splice(+b.dataset.i, 1);
-    render();
-  });
+  if (FORM_URL) {
+    const card = document.getElementById('order-form-card');
+    card.innerHTML = '';
+    const frame = document.createElement('iframe');
+    frame.src = FORM_URL;
+    frame.title = 'Biểu mẫu đặt in ảnh nam châm';
+    frame.loading = 'lazy';
+    frame.className = 'order-form-frame';
+    card.appendChild(frame);
+  }
 </script>
 </body>
 </html>

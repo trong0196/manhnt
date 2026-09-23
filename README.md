@@ -35,9 +35,9 @@ Nút **"Nhắn Zalo"** và icon social trỏ ra link ngoài (Zalo/WhatsApp/FB/IG
 ├── index.html         # trang chủ
 ├── products.html      # sản phẩm
 ├── reviews.html       # đánh giá (kênh xem phản hồi + cách gửi feedback)
-├── about.html         # giới thiệu (câu chuyện + timeline cột mốc)
+├── about.html         # giới thiệu (bố cục riêng: giá trị, quy trình xưởng, cam kết)
 ├── contact.html       # liên hệ (6 kênh)
-├── order.html         # gửi ảnh để in (wizard 3 bước + chọn khung)
+├── order.html         # gửi ảnh để in (nhúng Google Form)
 ├── details.html       # chi tiết ảnh nam châm (30 ảnh khách hàng)
 ├── khung-de-ban.html  # chi tiết khung để bàn (12 ảnh khách hàng)
 ├── styles.css         # style DÙNG CHUNG cho cả 8 trang, design token ở :root
@@ -132,9 +132,10 @@ kèm ảnh sticky bên phải, panel cam kết nền nâu đậm, CTA cuối.
 **`contact.html`** — hero + panel vàng chứa 6 kênh liên hệ (Zalo, WhatsApp,
 Facebook, Instagram, Telegram, Email), 3 cột desktop → 2 → 1.
 
-**`order.html`** — wizard 3 bước (Thêm Ảnh / Thông Tin / Hoàn Tất), vùng kéo-thả
-ảnh, khối chọn khung để bàn (5 cỡ × 11 màu × số lượng), nút "Tiếp tục" disabled.
-Chỉ là **giao diện tĩnh** — không có xử lý upload thật.
+**`order.html`** — phần mở đầu (3 việc cần chuẩn bị) + khung nhúng **Google Form**
+để khách điền đơn và tải ảnh. Dán đường dẫn form vào biến `FORM_URL` trong thẻ
+`<script>` cuối trang. Chưa dán thì trang tự hiện khối "Gửi ảnh qua Zalo" thay cho
+biểu mẫu, nên không bao giờ hiện ô trống.
 
 **`details.html`** — trang chi tiết ảnh nam châm: hero, 6 set giá,
 4 điểm nổi bật, quy trình 4 bước, 3 thông số, khối cấu tạo 6 lớp, khối keo nano,
@@ -151,17 +152,13 @@ hero, 5 mức giá, 11 swatch màu, 2 nút, 3 điểm nổi bật, lưới 12 �
 | `products.html` — khối ảnh nam châm | `details.html` |
 | `products.html` — khối khung để bàn | `khung-de-ban.html` |
 
-### Khối "Thêm khung" ở `order.html`
+### Nhúng Google Form ở `order.html`
 
-Có JS thật:
+1. Tạo Google Form, thêm các câu hỏi (tên, SĐT, địa chỉ, set ảnh, khung, tải ảnh, ghi chú).
+2. Trong form bấm **Send → tab `< >`**, copy phần `src` (dạng
+   `https://docs.google.com/forms/d/e/…/viewform?embedded=true`).
+3. Dán vào `const FORM_URL = '…'` ở cuối `order.html`.
+4. Form dài hơn khung thì chỉnh `min-height` của `.order-form-frame` trong `styles.css`.
 
-1. Mặc định chỉ hiện nút **"+ Thêm khung"**.
-2. Bấm vào → hiện form: 5 cỡ khung (mặc định **Khung 4 ảnh**), 11 màu (mặc định
-   **Trắng**), số lượng −/+, rồi 2 nút **Thêm** (coral) / **Huỷ** (viền).
-3. Bấm **Thêm** → khung được đẩy vào danh sách (`Khung 8 ảnh - Hồng · x2 · 370K`),
-   tổng tiền hiện ở góc phải header, form đóng lại, nút **Tiếp tục** bật.
-   Thêm lại đúng cỡ + đúng màu thì cộng dồn số lượng thay vì tạo dòng mới.
-4. Mỗi dòng có nút **Xoá**; xoá hết thì **Tiếp tục** khoá lại.
-
-Giá: 2 ảnh 55K · 3 ảnh 80K · 4 ảnh 105K · 8 ảnh 185K · 12 ảnh 285K.
-Phần upload ảnh vẫn chỉ là giao diện (không có backend).
+Câu trả lời tự vào Google Sheet qua **Responses → Link to Sheets**.
+Giá khung: 2 ảnh 55K · 3 ảnh 80K · 4 ảnh 105K · 8 ảnh 185K · 12 ảnh 285K.
