@@ -34,7 +34,7 @@ Nút **"Nhắn Zalo"** và icon social trỏ ra link ngoài (Zalo/WhatsApp/FB/IG
 .
 ├── index.html         # trang chủ
 ├── products.html      # sản phẩm
-├── reviews.html       # đánh giá (47 ảnh feedback)
+├── reviews.html       # đánh giá (kênh xem phản hồi + cách gửi feedback)
 ├── about.html         # giới thiệu (câu chuyện + timeline cột mốc)
 ├── contact.html       # liên hệ (6 kênh)
 ├── order.html         # gửi ảnh để in (wizard 3 bước + chọn khung)
@@ -42,7 +42,6 @@ Nút **"Nhắn Zalo"** và icon social trỏ ra link ngoài (Zalo/WhatsApp/FB/IG
 ├── khung-de-ban.html  # chi tiết khung để bàn (12 ảnh khách hàng)
 ├── styles.css         # style DÙNG CHUNG cho cả 8 trang, design token ở :root
 └── assets/
-    ├── reviews/r01..r47.jpg  # ảnh gallery trang đánh giá
     ├── magnets/m01..m30.jpg  # ảnh khách hàng — trang chi tiết ảnh nam châm
     ├── frames/f01..f12.jpg   # ảnh khách hàng — trang chi tiết khung
     ├── nano.jpg              # keo dán nano acrylic
@@ -52,7 +51,6 @@ Nút **"Nhắn Zalo"** và icon social trỏ ra link ngoài (Zalo/WhatsApp/FB/IG
     ├── layer-stack.jpg       # sơ đồ 6 lớp
     ├── gallery-1..2.jpg      # ảnh máy dập ở xưởng (khối Chất lượng)
     ├── favicon.png           # icon tab trình duyệt (180x180)
-    ├── feedback-1..6.jpg     # screenshot feedback khách hàng
     ├── cta.jpg               # ảnh nghiêng ở banner cuối
     └── icon-{zalo,zalo-color,whatsapp,facebook,instagram,tiktok,telegram,email}.svg
 ```
@@ -71,7 +69,7 @@ Thay ảnh: giữ nguyên tên file trong `assets/` thì không cần sửa HTML
 | 3 | Ảnh nam châm | panel kem, ảnh + badge bên trái, 6 set card + note + ví dụ tính tiền + 4 thông số |
 | 4 | Khung để bàn | nền gradient nâu vàng, 11 swatch màu, 5 mức giá, 2 nút |
 | 5 | Quy trình đặt hàng | 4 bước có đường nối đứt nét + box phí ship quốc tế |
-| 6 | Chất lượng + Feedback | grid 2 cột: sơ đồ 6 lớp + 2 ảnh xưởng / lưới 6 ảnh feedback |
+| 6 | Chất lượng + Khách nói gì | grid 2 cột: sơ đồ 6 lớp + 2 ảnh xưởng / thẻ dẫn sang Facebook + Zalo |
 | 7 | Final CTA | banner vàng, ảnh nghiêng -7°, nút nâu đậm |
 | 8 | Footer | **không có** — xem ghi chú bên dưới |
 
@@ -123,12 +121,13 @@ Một cây DOM duy nhất, co giãn bằng media query:
 Giống trang chủ nhưng bỏ phần ví dụ tính tiền / thông số, và 2 nút đổi thành
 "Xem chi tiết" (đậm) + "Gửi ảnh để in" (viền).
 
-**`reviews.html`** — hero phủ gradient lên ảnh + lưới 47 ảnh feedback
-(4 cột desktop → 3 → 2 trên điện thoại) + banner CTA. Ảnh dùng `loading="lazy"`.
+**`reviews.html`** — hero phủ gradient lên ảnh + 2 thẻ ("Đánh giá mới nhất nằm ở
+Facebook" và "Bạn vừa nhận hàng?" với 3 bước gửi feedback) + banner CTA.
+Chưa có ảnh feedback thật nên trang không còn lưới ảnh.
 
-**`about.html`** — hero + khối "Hành trình" + timeline 9 cột mốc
-(chấm tròn coral, cột mốc cuối màu nâu đậm) + khối quote nền gradient vàng→coral
-với dấu ngoặc kép Georgia mờ.
+**`about.html`** — bố cục riêng (`.story-*`), khác trang chủ: mở đầu 2 cột với 2 ảnh
+chồng nghiêng, 4 thẻ "Tiệm làm gì cho tấm ảnh của bạn", danh sách 5 bước ở xưởng
+kèm ảnh sticky bên phải, panel cam kết nền nâu đậm, CTA cuối.
 
 **`contact.html`** — hero + panel vàng chứa 6 kênh liên hệ (Zalo, WhatsApp,
 Facebook, Instagram, Telegram, Email), 3 cột desktop → 2 → 1.
