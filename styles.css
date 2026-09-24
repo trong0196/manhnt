@@ -2577,3 +2577,48 @@ a { color: inherit; text-decoration: none; }
   .order-fallback-actions .pill { flex: 1 1 100%; }
   .order-form-frame { min-height: 2000px; }
 }
+
+/* ------------------------------------------------ hộp mã QR Zalo (zalo.js) */
+.zalo-modal { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 20px; }
+.zalo-modal[hidden] { display: none; }
+.zalo-backdrop { position: absolute; inset: 0; background: rgba(43, 32, 4, .55); backdrop-filter: blur(2px); }
+.zalo-card {
+  position: relative;
+  width: min(100%, 380px);
+  max-height: calc(100dvh - 40px);
+  overflow-y: auto;
+  border-radius: 14px;
+  background: var(--paper);
+  padding: 28px 26px 26px;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(43, 32, 4, .3);
+}
+.zalo-card h2 { color: var(--brand-ink); font-size: 22px; font-weight: 900; line-height: 1.2; }
+.zalo-card > p { margin-top: 10px; color: var(--ink-muted); font-size: 14px; font-weight: 600; line-height: 1.5; }
+.zalo-card img {
+  width: 100%;
+  height: auto;
+  max-width: 280px;
+  margin: 18px auto 0;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+}
+.zalo-card .zalo-phone { margin-top: 14px; font-size: 14px; }
+.zalo-card .zalo-phone strong { color: var(--brand-ink); font-weight: 900; }
+.zalo-card .btn { width: 100%; margin-top: 18px; font-size: 16px; }
+.zalo-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: var(--ink-muted);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+.zalo-close:hover { background: var(--cream-warm); }
+.zalo-close:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }

@@ -27,6 +27,8 @@ python3 -m http.server 8080
 
 Nút **"Gửi ảnh để in" / "Gửi ảnh ngay"** ở mọi trang đều dẫn sang `order.html`.
 Nút **"Nhắn Zalo"** và icon social trỏ ra link ngoài (Zalo/WhatsApp/FB/IG/TikTok).
+Trên máy tính, bấm link Zalo sẽ mở hộp mã QR (`zalo.js`) thay vì đi thẳng ra
+zaloapp.com — trên điện thoại vẫn mở app Zalo như bình thường.
 
 ## Cấu trúc
 
@@ -41,6 +43,7 @@ Nút **"Nhắn Zalo"** và icon social trỏ ra link ngoài (Zalo/WhatsApp/FB/IG
 ├── details.html       # chi tiết ảnh nam châm (30 ảnh khách hàng)
 ├── khung-de-ban.html  # chi tiết khung để bàn (12 ảnh khách hàng)
 ├── styles.css         # style DÙNG CHUNG cho cả 8 trang, design token ở :root
+├── zalo.js            # bấm nút Zalo trên máy tính → hiện hộp mã QR
 └── assets/
     ├── magnets/m01..m30.jpg  # ảnh khách hàng — trang chi tiết ảnh nam châm
     ├── frames/f01..f12.jpg   # ảnh khách hàng — trang chi tiết khung
@@ -51,6 +54,7 @@ Nút **"Nhắn Zalo"** và icon social trỏ ra link ngoài (Zalo/WhatsApp/FB/IG
     ├── layer-stack.jpg       # sơ đồ 6 lớp
     ├── gallery-1..2.jpg      # ảnh máy dập ở xưởng (khối Chất lượng)
     ├── favicon.png           # icon tab trình duyệt (180x180)
+    ├── zalo-qr.jpg           # danh thiếp Zalo, hiện trong hộp QR
     ├── cta.jpg               # ảnh nghiêng ở banner cuối (tủ lạnh có logo TM)
     └── icon-{zalo,zalo-color,whatsapp,facebook,instagram,tiktok,telegram,email}.svg
 ```
