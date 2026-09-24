@@ -51,7 +51,7 @@ Nút **"Nhắn Zalo"** và icon social trỏ ra link ngoài (Zalo/WhatsApp/FB/IG
     ├── layer-stack.jpg       # sơ đồ 6 lớp
     ├── gallery-1..2.jpg      # ảnh máy dập ở xưởng (khối Chất lượng)
     ├── favicon.png           # icon tab trình duyệt (180x180)
-    ├── cta.jpg               # ảnh nghiêng ở banner cuối
+    ├── cta.jpg               # ảnh nghiêng ở banner cuối (tủ lạnh có logo TM)
     └── icon-{zalo,zalo-color,whatsapp,facebook,instagram,tiktok,telegram,email}.svg
 ```
 
@@ -66,8 +66,8 @@ Thay ảnh: giữ nguyên tên file trong `assets/` thì không cần sửa HTML
 |---|---------|---------|
 | 1 | Header | sticky, logo 2 dòng, 5 menu, CTA vàng; ≤1023px đổi thành hamburger |
 | 2 | Hero | 2 cột chồng lên ảnh, phủ gradient kem; 3 price card nổi góc phải dưới |
-| 3 | Ảnh nam châm | panel kem, ảnh + badge bên trái, 6 set card + note + ví dụ tính tiền + 4 thông số |
-| 4 | Khung để bàn | nền gradient nâu vàng, 11 swatch màu, 5 mức giá, 2 nút |
+| 3 | Ảnh nam châm 5,4x8 | panel kem, ảnh + badge bên trái, 6 set card + note + ví dụ tính tiền + 4 thông số |
+| 4 | Ảnh nam châm tròn | nền gradient nâu vàng, mô tả sản phẩm, 5 mức giá set tròn, 2 nút |
 | 5 | Quy trình đặt hàng | 4 bước có đường nối đứt nét + box phí ship quốc tế |
 | 6 | Chất lượng + Khách nói gì | grid 2 cột: sơ đồ 6 lớp + 2 ảnh xưởng / thẻ dẫn sang Facebook + Zalo |
 | 7 | Final CTA | banner vàng, ảnh nghiêng -7°, nút nâu đậm |
@@ -161,4 +161,5 @@ hero, 5 mức giá, 11 swatch màu, 2 nút, 3 điểm nổi bật, lưới 12 �
 4. Form dài hơn khung thì chỉnh `min-height` của `.order-form-frame` trong `styles.css`.
 
 Câu trả lời tự vào Google Sheet qua **Responses → Link to Sheets**.
-Giá khung: 2 ảnh 55K · 3 ảnh 80K · 4 ảnh 105K · 8 ảnh 185K · 12 ảnh 285K.
+Giá ảnh 5,4x8: 6 ảnh 120k · 20 ảnh 400k · 30 ảnh 600k · 50 ảnh 1.000k · 100 ảnh 1.990k.
+Giá ảnh tròn 6x6: 6 ảnh 60k · 20 ảnh 200k · 30 ảnh 300k · 50 ảnh 500k · 100 ảnh 1tr.
