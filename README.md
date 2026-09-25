@@ -40,12 +40,12 @@ zaloapp.com — trên điện thoại vẫn mở app Zalo như bình thường.
 ├── about.html         # giới thiệu (bố cục riêng: giá trị, quy trình xưởng, cam kết)
 ├── contact.html       # liên hệ (6 kênh)
 ├── order.html         # gửi ảnh để in (nhúng Google Form)
-├── details.html       # chi tiết ảnh nam châm (30 ảnh khách hàng)
+├── details.html       # chi tiết ảnh nam châm (24 ảnh sản phẩm)
 ├── khung-de-ban.html  # chi tiết khung để bàn (12 ảnh khách hàng)
 ├── styles.css         # style DÙNG CHUNG cho cả 8 trang, design token ở :root
 ├── zalo.js            # bấm nút Zalo trên máy tính → hiện hộp mã QR
 └── assets/
-    ├── magnets/m01..m30.jpg  # ảnh khách hàng — trang chi tiết ảnh nam châm
+    ├── magnets/m01..m24.jpg  # ảnh sản phẩm của tiệm — trang chi tiết ảnh nam châm
     ├── frames/f01..f12.jpg   # ảnh khách hàng — trang chi tiết khung
     ├── nano.jpg              # keo dán nano acrylic
     ├── hero-fridge.jpg       # ảnh hero (trang chủ, giới thiệu, liên hệ, đánh giá)
@@ -143,7 +143,7 @@ biểu mẫu, nên không bao giờ hiện ô trống.
 
 **`details.html`** — trang chi tiết ảnh nam châm: hero, 6 set giá,
 4 điểm nổi bật, quy trình 4 bước, 3 thông số, khối cấu tạo 6 lớp, khối keo nano,
-lưới 30 ảnh khách hàng.
+lưới 24 ảnh sản phẩm của tiệm.
 
 **`khung-de-ban.html`** — trang chi tiết khung để bàn:
 hero, 5 mức giá, 11 swatch màu, 2 nút, 3 điểm nổi bật, lưới 12 ảnh khách hàng.
