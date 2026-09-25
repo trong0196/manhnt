@@ -1,6 +1,6 @@
 # Landing page — in ảnh nam châm tủ lạnh (HTML/CSS)
 
-Trang tĩnh viết bằng HTML + CSS thuần. Gồm **8 trang**, link qua lại đầy đủ.
+Trang tĩnh viết bằng HTML + CSS thuần. Gồm **7 trang**, link qua lại đầy đủ.
 Không build, không dependency, không framework.
 
 ## Chạy thử
@@ -23,7 +23,6 @@ python3 -m http.server 8080
 | Liên hệ | `contact.html` |
 | Gửi ảnh để in | `order.html` |
 | Chi tiết ảnh nam châm | `details.html` |
-| Chi tiết khung để bàn | `khung-de-ban.html` |
 
 Nút **"Gửi ảnh để in" / "Gửi ảnh ngay"** ở mọi trang đều dẫn sang `order.html`.
 Nút **"Nhắn Zalo"** và icon social trỏ ra link ngoài (Zalo/WhatsApp/FB/IG/TikTok).
@@ -41,13 +40,10 @@ zaloapp.com — trên điện thoại vẫn mở app Zalo như bình thường.
 ├── contact.html       # liên hệ (6 kênh)
 ├── order.html         # gửi ảnh để in (nhúng Google Form)
 ├── details.html       # chi tiết ảnh nam châm (24 ảnh sản phẩm)
-├── khung-de-ban.html  # chi tiết khung để bàn (12 ảnh khách hàng)
-├── styles.css         # style DÙNG CHUNG cho cả 8 trang, design token ở :root
+├── styles.css         # style DÙNG CHUNG cho cả 7 trang, design token ở :root
 ├── zalo.js            # bấm nút Zalo trên máy tính → hiện hộp mã QR
 └── assets/
     ├── magnets/m01..m24.jpg  # ảnh sản phẩm của tiệm — trang chi tiết ảnh nam châm
-    ├── frames/f01..f12.jpg   # ảnh khách hàng — trang chi tiết khung
-    ├── nano.jpg              # keo dán nano acrylic
     ├── hero-fridge.jpg       # ảnh hero (trang chủ, giới thiệu, liên hệ, đánh giá)
     ├── magnet-closeup.jpg    # ảnh nam châm xếp trên bàn (trang chủ, sản phẩm, chi tiết)
     ├── product-magnets.jpg   # nam châm tròn + chữ nhật (khối khung, trang khung để bàn)
@@ -60,7 +56,7 @@ zaloapp.com — trên điện thoại vẫn mở app Zalo như bình thường.
 ```
 
 Mỗi trang tự chứa header + footer (site tĩnh, không có template engine) nên
-**sửa menu thì phải sửa ở cả 8 file**. Style thì chỉ có một `styles.css` duy nhất.
+**sửa menu thì phải sửa ở cả 7 file**. Style thì chỉ có một `styles.css` duy nhất.
 
 Thay ảnh: giữ nguyên tên file trong `assets/` thì không cần sửa HTML.
 
@@ -145,16 +141,11 @@ biểu mẫu, nên không bao giờ hiện ô trống.
 4 điểm nổi bật, quy trình 4 bước, 3 thông số, khối cấu tạo 6 lớp, khối keo nano,
 lưới 24 ảnh sản phẩm của tiệm.
 
-**`khung-de-ban.html`** — trang chi tiết khung để bàn:
-hero, 5 mức giá, 11 swatch màu, 2 nút, 3 điểm nổi bật, lưới 12 ảnh khách hàng.
-
 ### Nút "Xem chi tiết" dẫn đi đâu
 
 | Ở đâu | Dẫn tới |
 |---|---|
-| `index.html` — khối khung để bàn | `khung-de-ban.html` |
 | `products.html` — khối ảnh nam châm | `details.html` |
-| `products.html` — khối khung để bàn | `khung-de-ban.html` |
 
 ### Nhúng Google Form ở `order.html`
 
